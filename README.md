@@ -2,7 +2,7 @@
 
 本仓库和宇树提供的仓库基本一致，我们删去了C++实例，并把官方文档中的教程在这体现一二。如果本文档令您感到困惑或者不清晰，还清前往[官方文档](https://dev-z1.cn.unitree.com/)查看，或者查看B站上的[官方视频教程](https://www.bilibili.com/video/BV1jT411B7Cz?vd_source=11e4ce612726bc848135c5c6c83ddfa9&spm_id_from=333.788.videopod.sections)
 
-#  实机运行
+# 实机运行
 
 这部分的主要目的是帮助您安装并运行Z1-sdk，接下来步骤：
 ## 克隆仓库
@@ -14,8 +14,7 @@ mkdir -p ~/your/path
 cd ~/your/path
 
 # 克隆仓库
-git clone https://github.com/unitreerobotics/z1_controller.git 
-git clone https://github.com/unitreerobotics/z1_sdk.git
+git clone https://github.com/Jerrybery/MIAA-z1
 ```
 
 ## 编译仓库
@@ -44,7 +43,8 @@ cd ../..
 | 域名              | 子网掩码          | 网关            |
 | --------------- | ------------- | ------------- |
 | 192.168.123.XXX | 255.255.255.0 | 192.168.123.1 |
-XXX可以换为除110和111外的所有数，当然，如果你要操作多台机械臂，不要设置重复的IP。
+
+因机械臂的默认IP为192.168.123.110，XXX可以换为除110和111外的所有数，因为你的域名不应当和机械臂的域名重复。所以当然，如果你要操作多台机械臂，不要设置重复的IP。机械臂的默认IP的设置可以在`z1_controller/config/config.xml`中更改。
 
 在运行脚本前，先在终端运行`z1-ctrl`。运行后会一直跳出警告`[WARNING] UDPPort::recv, unblock version, connect wit z1_sdk wait time out`，这是因为你还没有运行sdk进行通信，此时再运行你的脚本即可。
 
